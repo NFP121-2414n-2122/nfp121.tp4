@@ -29,12 +29,43 @@ public class IHMQuestion2_1 extends JFrame {
 
         // à compléter
         // le bouton A a 3 observateurs jbo1, jbo2 et jbo3
-
+        TextArea txt1 = new TextArea("clic du button A");
+        TextArea txt2 = new TextArea("clic du button B");
+        TextArea txt3 = new TextArea("clic du button C");
+        
+        
+        boutonA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonObserver jbo1 = new question2.JButtonObserver("jbo1",txt1);
+                JButtonObserver jbo2 = new question2.JButtonObserver("jbo2",txt1);
+                JButtonObserver jbo3 = new question2.JButtonObserver("jbo3",txt1);
+                jbo1.actionPerformed123(evt);
+                jbo2.actionPerformed123(evt);
+                jbo3.actionPerformed123(evt);
+            }
+        });
+        
         // le bouton B a 2 observateurs jbo1 et jbo2
-
+        
+        boutonB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonObserver jbo1 = new question2.JButtonObserver("jbo1",txt2);
+                JButtonObserver jbo2 = new question2.JButtonObserver("jbo2",txt2);
+                jbo1.actionPerformed123(evt);
+                jbo2.actionPerformed123(evt);
+            }
+        });
+        
         // le bouton C a 1 observateur jbo1
-
-      
+        boutonC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonObserver jbo1 = new question2.JButtonObserver("jbo1",txt3);
+                jbo1.actionPerformed123(evt);
+            }
+        });
+        
+        
+        
     }
     
     public static void main(String[] args){
